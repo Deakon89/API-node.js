@@ -39,4 +39,16 @@ router.get('/orders_item/user/:user_id', (req, res) => {
     });
 });
 
+// delete order
+router.delete('/orders_item/:id', (req, res) => {
+    const { id } = req.params;
+    Order.delete(id, (err, result) => {
+        if (err) return res.status(500).json({ error: 'database error' });
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: 'order not found' });
+        }
+        res.status(200).json({ message: 'order deleted' });
+    });
+});
+
 module.exports=router;

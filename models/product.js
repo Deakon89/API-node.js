@@ -28,10 +28,11 @@ const Product = {
      getById:(id, callback) => {
          db.query("SELECT * FROM product WHERE id=?",[id], callback);
      },
-    //  delete product
-     delete:(id,callback)=>{
-         db.query("DELETE FROM product WHERE id=?",[id], callback);
-     },
+    // Delete a product by its ID
+    delete: (productId, callback) => {
+        const sql = "DELETE FROM product WHERE id = ?";
+        db.query(sql, [productId], callback);
+    },
 
 };
 

@@ -39,7 +39,13 @@ const Order={
     getByUserId: (user_id, callback) => {
         const sql = 'SELECT * FROM orders_item WHERE user_id = ?';
         db.query(sql, [user_id], callback);
-    }
+    },
+    // delete order
+    delete: (orderId, callback) => {
+        const sql = 'DELETE FROM orders_item WHERE id = ?';
+        db.query(sql, [orderId], callback);
+    },
+    
 };
 
 module.exports=Order;

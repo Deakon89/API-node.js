@@ -68,13 +68,18 @@ router.put("/product/:id", upload.single("image"), (req,res) => {
 });
 
 // delete product
-router.delete("/product/:id", (req,res) => {
-    Product.delete(req.params.id,(err)=>{
-        if(err){
-            return res.status(500).json ({error:"database error"});
+router.delete("/product/:id", (req, res) => {
+    const { id } = req.params;
+    
+    Product.delete(id, (err, result) => {
+        if (err) {
+            return res.status(500).json({ error: "database error or the product is ordered" });
         }
-        res.json({message:"product deleted"});
-    })
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: "product not found" });
+        }
+        res.status(200).json({ message: "product deleted" });
+    });
 });
 
 module.exports=router;
