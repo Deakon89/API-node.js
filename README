@@ -2,34 +2,6 @@
 
 Questa API consente la gestione di utenti, prodotti e ordini utilizzando un database MySQL. Il backend è costruito con `Express`, mentre la connessione al database è gestita con `MySQL2`. Sono inclusi strumenti per il testing come `Supertest` e `Sinon`.
 
-## Installazione
-
-### Clonare il repository
-```sh
-git clone https://github.com/tuo-repo/API-node.js.git
-cd API-node.js
-```
-
-### Installare le dipendenze
-```sh
-npm install
-```
-
-### Configurare il database
-Creare un file `.env` nella root del progetto e configurare le credenziali del database:
-```ini
-DB_HOST=localhost
-DB_USER=root
-DB_PASS=tuapassword
-DB_NAME=nome_database
-```
-
-### Avviare il server
-```sh
-npm start
-```
-Il server sarà in ascolto su `http://localhost:3000`
-
 ---
 ## Endpoint Disponibili
 
