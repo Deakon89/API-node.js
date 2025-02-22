@@ -13,10 +13,10 @@ Questa API consente la gestione di utenti, prodotti e ordini utilizzando un data
 - **Cancella un utente** → `DELETE /api/users/:id`
 
 ### 🔹 Prodotti
-- **Crea un prodotto** → `POST /api/products`
-- **Ottieni tutti i prodotti** → `GET /api/products`
-- **Aggiorna un prodotto** → `PUT /api/products/:id`
-- **Cancella un prodotto** → `DELETE /api/products/:id`
+- **Crea un prodotto** → `POST /api/product`
+- **Ottieni tutti i prodotti** → `GET /api/product`
+- **Aggiorna un prodotto** → `PUT /api/product/:id`
+- **Cancella un prodotto** → `DELETE /api/product/:id`
 
 ### 🔹 Ordini
 - **Crea un ordine** → `POST /api/orders_item`
