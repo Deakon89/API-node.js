@@ -2,34 +2,6 @@
 
 Questa API consente la gestione di utenti, prodotti e ordini utilizzando un database MySQL. Il backend è costruito con `Express`, mentre la connessione al database è gestita con `MySQL2`. Sono inclusi strumenti per il testing come `Supertest` e `Sinon`.
 
-## 🚀 Installazione
-
-### 1️⃣ Clonare il repository
-```sh
-git clone https://github.com/tuo-repo/API-node.js.git
-cd API-node.js
-```
-
-### 2️⃣ Installare le dipendenze
-```sh
-npm install
-```
-
-### 3️⃣ Configurare il database
-Creare un file `.env` nella root del progetto e configurare le credenziali del database:
-```ini
-DB_HOST=localhost
-DB_USER=root
-DB_PASS=tuapassword
-DB_NAME=nome_database
-```
-
-### 4️⃣ Avviare il server
-```sh
-npm start
-```
-Il server sarà in ascolto su `http://localhost:3000`
-
 ---
 ## Endpoint Disponibili📌
 
@@ -38,16 +10,20 @@ Il server sarà in ascolto su `http://localhost:3000`
 - **Ottieni tutti gli utenti** → `GET /api/users`
 - **Ottieni un utente per ID** → `GET /api/users/:id`
 - **Aggiorna un utente** → `PUT /api/users/:id`
+- **Cancella un utente** → `DELETE /api/users/:id`
 
 ### 🔹 Prodotti
 - **Crea un prodotto** → `POST /api/products`
 - **Ottieni tutti i prodotti** → `GET /api/products`
 - **Aggiorna un prodotto** → `PUT /api/products/:id`
+- **Cancella un prodotto** → `DELETE /api/products/:id`
 
 ### 🔹 Ordini
 - **Crea un ordine** → `POST /api/orders_item`
 - **Ottieni tutti gli ordini** → `GET /api/orders_item`
 - **Ottieni ordini di un utente** → `GET /api/orders_item/user/:user_id`
+- **Ottieni ordini per data** → `GET /api/orders_item/date?start=Y-M-D&end=Y-M-D`
+- **Cancella ordini per ID** → `DELETE /api/orders_item/:id`
 
 ---
 ## 🔬 Testing con Supertest e Sinon
@@ -73,7 +49,6 @@ L'API utilizza `mocha`, `chai`, `supertest` e `sinon` per testare le route e le 
 ## 📌 Note
 - Assicurati che MySQL sia in esecuzione prima di avviare il server.
 - Il file `.env` deve essere incluso nel `.gitignore` per proteggere le credenziali sensibili.
-- È consigliabile utilizzare **PM2** per la gestione del processo in produzione.
 
 💡 **Contributi e suggerimenti sono benvenuti!** 🚀
 
