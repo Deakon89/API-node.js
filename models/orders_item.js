@@ -45,6 +45,12 @@ const Order={
         const sql = 'DELETE FROM orders_item WHERE id = ?';
         db.query(sql, [orderId], callback);
     },
+    //get by date
+    getByDate: (startDate, endDate, callback) => {
+        const sql = 'SELECT * FROM orders_item WHERE order_date >= ? AND order_date < ?';
+        console.log('Query:', sql, 'Values:', [startDate, endDate]);
+        db.query(sql, [startDate, endDate], callback);
+    },
     
 };
 

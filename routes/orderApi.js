@@ -22,6 +22,18 @@ router.post('/orders_item', (req, res) => {
     });
 });
 
+// get by date
+router.get('/orders_item/date', (req, res) => {
+    const { start, end } = req.query;
+    if (!start || !end) {
+        return res.status(400).json({ error: 'specify parameter' });
+    }
+    Order.getByDate(start, end, (err, results) => {
+        if (err) return res.status(500).json({ error: 'database error' });
+        res.json(results);
+    });
+});
+
 // get all orders
 router.get('/orders_item', (req, res) => {
     Order.getAll((err, results) => {
@@ -49,6 +61,7 @@ router.delete('/orders_item/:id', (req, res) => {
         }
         res.status(200).json({ message: 'order deleted' });
     });
+    
 });
 
 module.exports=router;
