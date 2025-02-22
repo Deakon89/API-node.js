@@ -1,4 +1,4 @@
-# API Node.js con Express e MySQL
+# **API Node.js con Express e MySQL**
 
 Questa API consente la gestione di utenti, prodotti e ordini utilizzando un database MySQL. Il backend è costruito con `Express`, mentre la connessione al database è gestita con `MySQL2`. Sono inclusi strumenti per il testing come `Supertest` e `Sinon`.
 
@@ -31,7 +31,7 @@ npm start
 Il server sarà in ascolto su `http://localhost:3000`
 
 ---
-## 📌 Endpoint Disponibili
+## Endpoint Disponibili📌
 
 ### 🔹 Utenti
 - **Crea un utente** → `POST /api/users`
